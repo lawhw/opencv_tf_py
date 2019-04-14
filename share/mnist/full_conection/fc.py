@@ -18,13 +18,13 @@ def variable_summarise(var):
 
 def tensorboard_op():
     # 载入数据集
-    mnist = input_data.read_data_sets("./../datas/mnist/",one_hot=True)
+    mnist = input_data.read_data_sets("./../../../datas/mnist/",one_hot=True)
     # 运行次数
     max_steps = 10001
     # 图片数量
     image_num = 3000
     # 文件路径
-    DIR = "./../logs/fc/"
+    DIR = "./../../../datas/logs/share/mnist/fc/"
 
     # 定义会话
     sess = tf.Session()

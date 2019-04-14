@@ -19,7 +19,7 @@ def read_image(filename):
     magic, images, rows, columns = struct.unpack_from('>IIII' , buf , index)
     index += struct.calcsize('>IIII')
 
-
+    count = 0
     for i in range(images):
         image = Image.new('L', (columns, rows))
 
@@ -32,6 +32,8 @@ def read_image(filename):
 
                 print('save ' + str(i) + 'image')
                 image.save('./tmp/tensorflow/mnist/input_data/t10k-images-idx3-ubyte/' + str(i) + '.png')
+        break
+
 
 
 def read_label(filename, saveFilename):
@@ -66,9 +68,9 @@ def read_label(filename, saveFilename):
 
 
 if __name__ == '__main__':
-    read_image('./tmp/tensorflow/mnist/input_data/t10k-images-idx3-ubyte/t10k-images.idx3-ubyte')
-    read_label('./tmp/tensorflow/mnist/input_data/t10k-labels-idx1-ubyte/t10k-labels.idx1-ubyte', './tmp/tensorflow/mnist/input_data/t10k-labels-idx1-ubyte/label.txt')
+    read_image('./../../datas/mnist/t10k-images-idx3-ubyte/t10k-images.idx3-ubyte')
+    # read_label('./tmp/tensorflow/mnist/input_data/t10k-labels-idx1-ubyte/t10k-labels.idx1-ubyte', './tmp/tensorflow/mnist/input_data/t10k-labels-idx1-ubyte/label.txt')
 
-    read_image('./tmp/tensorflow/mnist/input_data/train-images-idx3-ubyte/train-images.idx3-ubyte')
-    read_label('./tmp/tensorflow/mnist/input_data/train-labels-idx1-ubyte/train-labels.idx1-ubyte',
-               './tmp/tensorflow/mnist/input_data/train-labels-idx1-ubyte/label.txt')
+    # read_image('./tmp/tensorflow/mnist/input_data/train-images-idx3-ubyte/train-images.idx3-ubyte')
+    # read_label('./tmp/tensorflow/mnist/input_data/train-labels-idx1-ubyte/train-labels.idx1-ubyte',
+    #            './tmp/tensorflow/mnist/input_data/train-labels-idx1-ubyte/label.txt')

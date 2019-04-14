@@ -1,10 +1,14 @@
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 from tensorflow.contrib.tensorboard.plugins import projector
+import os
+import cv2
+import numpy as np
+from PIL import Image
 
 
 
-mnist = input_data.read_data_sets('./../datas/mnist/', one_hot=True)
+mnist = input_data.read_data_sets('./../../../datas/mnist/', one_hot=True)
 
 # 运行次数
 max_steps = 10001
@@ -12,7 +16,7 @@ max_steps = 10001
 image_num = 3000
 
 # 文件路径
-DIR = "./../logs/cnn/"
+DIR = "./../../../datas/logs/share/mnist/cnn/"
 
 # 定义会话
 sess = tf.Session()

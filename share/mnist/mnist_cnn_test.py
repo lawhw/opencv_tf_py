@@ -1,32 +1,30 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
 import numpy as np
 import cv2
-from PIL import Image
+import os
+import math
 
 
 
 
-def readData(filename):
-    images = np.empty((1, 28 * 28), dtype=np.uint8)
-    # img = cv2.imread(filename)
-    # img = cv2.resize(img, (28, 28))
-    # img = cv2.cvtColor(img,cv2.COLOR_BGRA2GRAY)
-    # images = np.empty((1, 28*28), dtype=np.uint8)
-    # arr = np.asarray(img, dtype=np.uint8)
-    # images[0, :] = arr.flatten()
-    label = np.zeros((1,10), dtype='uint8')
 
-    img = cv2.imread(filename)
+
+def readData(path,filename):
+    images = np.empty((1, 28 * 28), dtype=np.float32)
+    label = np.zeros((1,10), dtype=np.float32)
+
+    img = cv2.imread(path)
     img = cv2.resize(img, (28, 28))
-    temp = "temp.jpg"
-    cv2.imwrite(temp, img)
-    im = Image.open(temp)  # 读取的图片所在路径，注意是28*28像素
+    img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    #img = (img - (255 / 1.0)) / 255
+    # cv2.imshow(filename,img)
+    # cv2.waitKey()
+    tva = [0*x for x in range(28*28)]
+    for i in range(28):
+        for j in range(28):
+            tva[i*28+j] =  math.fabs((0-img[i][j] )) * 1.0 / 255.0
 
-    im = im.convert('L')
-    tv = list(im.getdata())
-    tva = [(255 - x) * 1.0 / 255.0 for x in tv]
     images[0, :] = tva
     return (label,images)
 
@@ -145,16 +143,19 @@ def test(data_set):
             prediction = tf.argmax(logits, 1)
             predint = prediction.eval(feed_dict={
                 x: data_set[1],
-                y: data_set[0],
-                keep_prob: 0.7
+                keep_prob: 1.0
             }, session=sess)
-            print('识别结果:',predint[0])
+            return predint[0]
 
 def main():
-    print(test(readData("./../../datas/test/share/mnist/3_1.jpg")))
-    print(test(readData("./../../datas/test/share/mnist/2_1.png")))
-    print(test(readData("./../../datas/test/share/mnist/3_2.jpg")))
-    print(test(readData("./../../datas/test/share/mnist/5_1.png")))
+    # mnist = input_data.read_data_sets('./../../datas/mnist/', one_hot=True)
+    # # print(mnist.test.images[0])
+
+    #print(mnist.test.labels[0],test([[mnist.test.labels[0]],[mnist.test.images[0]]]))
+    for root, dirs, files in os.walk('./../../datas/test/mnist'):
+        for file in files:
+            print(file,test(readData(os.path.join(root,file),file)))
+
     pass
 
 if __name__ == '__main__':
