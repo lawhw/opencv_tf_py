@@ -16,8 +16,6 @@ def main():
     result = softmax(numpy.array([[1,2,1,2,1,1,3]]))
     print(result)
 
+if __name__ == '__main__':
+    main()
 
-table = {'yangsong': 0, 'liuwei': 0, 'yangda': 0}
-t = "yangsong"
-table[t] = 1
-print(table.get(t))
