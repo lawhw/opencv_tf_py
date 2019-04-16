@@ -5,7 +5,7 @@ import cv2
 import dlib
 import time
 
-input_dir = './../../datas/captrue/share/face_r'
+input_dir = './../../datas/capture/share/face_r'
 output_dir = './../../datas/train/share/face_r'
 size = 64
 
@@ -129,15 +129,15 @@ def face_decector(name,count=2000):
                     break;
             print('face_decector process is ', index, ' of ', count)
 def main():
-    #capture('yangsong',2000)
-    #face_decector('yangsong')
-    copy('yangda',count=500)
-    copy('liuwei', count=500)
-    copy('alex_lacamoire', count=500)
-    copy('biden', count=500)
-    copy('kit_harington', count=500)
-    copy('obama', count=500)
-    copy('rose_leslie', count=500)
+    #capture('yangda',2000)
+    face_decector('yangda')
+    #copy('yangda',count=1000)
+    # copy('liuwei', count=500)
+    # copy('alex_lacamoire', count=500)
+    # copy('biden', count=500)
+    # copy('kit_harington', count=500)
+    # copy('obama', count=500)
+    # copy('rose_leslie', count=500)
     pass
 
 if __name__ == '__main__':

@@ -4,9 +4,6 @@ import seq2seq_model
 import tensorflow as tf
 import numpy as np
 import sys
-import os
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 if __name__ == '__main__':
     source_id_to_word,source_word_to_id,source_vocab_size = generate_chat.get_vocabs(generate_chat.vocab_encode_file)

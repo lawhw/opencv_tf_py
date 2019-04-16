@@ -107,12 +107,12 @@ tf.app.flags.DEFINE_integer(
     """ how accurate the model is during training.""")
 
 # File-system cache locations.
-tf.app.flags.DEFINE_string('model_dir', '/tmp/imagenet',
+tf.app.flags.DEFINE_string('model_dir', './tmp/imagenet',
                            """Path to classify_image_graph_def.pb, """
                            """imagenet_synset_to_human_label_map.txt, and """
                            """imagenet_2012_challenge_label_map_proto.pbtxt.""")
 tf.app.flags.DEFINE_string(
-    'bottleneck_dir', '/tmp/bottleneck',
+    'bottleneck_dir', './tmp/bottleneck',
     """Path to cache bottleneck layer values as files.""")
 tf.app.flags.DEFINE_string('final_tensor_name', 'final_result',
                            """The name of the output classification layer in"""
@@ -682,7 +682,7 @@ def add_final_training_ops(class_count, final_tensor_name, bottleneck_tensor):
   ground_truth_input = tf.placeholder(tf.float32,
                                       [None, class_count],
                                       name='GroundTruthInput')
-  cross_entropy = tf.nn.softmax_cross_entropy_with_logits(
+  cross_entropy = tf.nn.softmax_cross_entropy_with_logits_v2(
       logits, ground_truth_input)
   cross_entropy_mean = tf.reduce_mean(cross_entropy)
   train_step = tf.train.GradientDescentOptimizer(FLAGS.learning_rate).minimize(
