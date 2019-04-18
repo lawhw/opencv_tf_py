@@ -134,14 +134,6 @@ http://playground.tensorflow.org
 
           ![1555121331078](./images/1555121331078.png)
 
-      
-
-      ​			![1555121662621](./images/1555121662621.png)
-
-      
-
-      ![](http://upload-images.jianshu.io/upload_images/2145769-80f9465f0ecb51e3.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-      ​		
-
-      ![1555122077774](./images/1555122077774.png)
+![1555121662621](./images/1555121662621.png)
+![](http://upload-images.jianshu.io/upload_images/2145769-80f9465f0ecb51e3.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![1555122077774](./images/1555122077774.png)
