@@ -1,4 +1,4 @@
-# 相关项目
+# 相关资源
 
 https://www.kaggle.com/competitions
 
@@ -19,3 +19,6 @@ https://www.kesci.com/
 https://biendata.com/
 
 https://challenger.ai/
+
+http://www.nlpr.ia.ac.cn/CN/folder/folder8.shtml
+

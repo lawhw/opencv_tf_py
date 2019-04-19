@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 # In[2]:
 
-lines = tf.gfile.GFile('./../../datas/model/share/face_r/output/output_labels.txt').readlines()
+lines = tf.gfile.GFile('./../../datas/model/share/re_inception/output/output_labels.txt').readlines()
 uid_to_human = {}
 #一行一行读取数据
 for uid,line in enumerate(lines) :
@@ -24,7 +24,7 @@ def id_to_string(node_id):
 
 
 #创建一个图来存放google训练好的模型
-with tf.gfile.FastGFile('./../../datas/model/share/face_r/output/output_graph.pb', 'rb') as f:
+with tf.gfile.FastGFile('./../../datas/model/share/re_inception/output/output_graph.pb', 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
     tf.import_graph_def(graph_def, name='')
@@ -33,7 +33,7 @@ with tf.gfile.FastGFile('./../../datas/model/share/face_r/output/output_graph.pb
 with tf.Session() as sess:
     softmax_tensor = sess.graph.get_tensor_by_name('final_result:0')
     #遍历目录
-    for root,dirs,files in os.walk('./../../datas/test/share/face_r'):
+    for root,dirs,files in os.walk('./../../datas/test/share/inception'):
         for file in files:
             #载入图片
             image_data = tf.gfile.FastGFile(os.path.join(root,file), 'rb').read()

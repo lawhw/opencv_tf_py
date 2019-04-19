@@ -1,0 +1,2 @@
+python chinese_rec.py --mode=train --max_steps=200000 --eval_steps=1000 --save_steps=10000 --checkpoint_dir=./../../datas/logs/share/chinese_rec/ --train_data_dir=./../../datas/train/share/chinese_rec/train/train/ --log_dir=./../../datas/logs/share/chinese_rec/ --test_data_dir=./../../datas/test/share/chinese_rec/test/
+pause

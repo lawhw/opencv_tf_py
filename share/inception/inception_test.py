@@ -74,7 +74,7 @@ with tf.gfile.FastGFile('./../../datas/model/inception_model/classify_image_grap
 with tf.Session() as sess:
     softmax_tensor = sess.graph.get_tensor_by_name('softmax:0')
     #遍历目录
-    for root,dirs,files in os.walk('./../../datas/test/share/inception/'):
+    for root,dirs,files in os.walk('./../../datas/test/share/re_inception/'):
         for file in files:
             #载入图片
             image_data = tf.gfile.FastGFile(os.path.join(root,file), 'rb').read()

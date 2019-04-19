@@ -1,0 +1,2 @@
+python chinese_rec.py --mode=inference --checkpoint_dir=./../../datas/logs/share/chinese_rec --train_data_dir=./../../datas/train/share/chinese_rec --log_dir=./../../datas/logs/share/chinese_rec --test_data_dir=./../../datas/test/share/chinese_rec
+pause

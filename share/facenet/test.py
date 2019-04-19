@@ -265,4 +265,4 @@ def images(path):
     pass
 
 if __name__ == '__main__':
-    images("./../../datas/test/share/face_r/123.jpg")
+    images("./../../datas/test/share/re_inception/123.jpg")

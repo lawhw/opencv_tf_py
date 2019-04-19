@@ -159,7 +159,7 @@ def inception_v4_base(inputs, final_endpoint='Mixed_7d', scope=None):
 
   Returns:
     logits: the logits outputs of the model.
-    end_points: the set of end_points from the inception model.
+    end_points: the set of end_points from the re_inception model.
 
   Raises:
     ValueError: if final_endpoint is not set to one of the predefined values,
@@ -273,7 +273,7 @@ def inception_v4(inputs, num_classes=1001, is_training=True,
 
   Returns:
     logits: the logits outputs of the model.
-    end_points: the set of end_points from the inception model.
+    end_points: the set of end_points from the re_inception model.
   """
   end_points = {}
   with tf.variable_scope(scope, 'InceptionV4', [inputs], reuse=reuse) as scope:

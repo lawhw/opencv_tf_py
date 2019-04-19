@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Contains common code shared by all inception models.
+"""Contains common code shared by all re_inception models.
 
 Usage of arg scope:
   with nets.arg_scope(inception_arg_scope()):
-    logits, end_points = inception.inception_v3(images, num_classes,
+    logits, end_points = re_inception.inception_v3(images, num_classes,
                                                 is_training=is_training)
 
 """
@@ -33,7 +33,7 @@ def inception_arg_scope(weight_decay=0.00004,
                         use_batch_norm=True,
                         batch_norm_decay=0.9997,
                         batch_norm_epsilon=0.001):
-  """Defines the default arg scope for inception models.
+  """Defines the default arg scope for re_inception models.
 
   Args:
     weight_decay: The weight decay to use for regularizing the model.
@@ -43,7 +43,7 @@ def inception_arg_scope(weight_decay=0.00004,
       in batch norm.
 
   Returns:
-    An `arg_scope` to use for the inception models.
+    An `arg_scope` to use for the re_inception models.
   """
   batch_norm_params = {
       # Decay for the moving averages.

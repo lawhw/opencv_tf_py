@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Contains the definition for inception v1 classification network."""
+"""Contains the definition for re_inception v1 classification network."""
 
 from __future__ import absolute_import
 from __future__ import division

@@ -5,8 +5,8 @@ import cv2
 import dlib
 import time
 
-input_dir = './../../datas/capture/share/face_r'
-output_dir = './../../datas/train/share/face_r'
+input_dir = './../../datas/capture/share/re_inception'
+output_dir = './../../datas/train/share/re_inception'
 size = 64
 
 

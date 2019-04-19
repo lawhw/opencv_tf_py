@@ -108,7 +108,7 @@ def inception_resnet_v2(inputs, num_classes=1001, is_training=True,
 
   Returns:
     logits: the logits outputs of the model.
-    end_points: the set of end_points from the inception model.
+    end_points: the set of end_points from the re_inception model.
   """
   end_points = {}
 

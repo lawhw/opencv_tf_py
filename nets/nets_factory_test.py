@@ -13,7 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 
-"""Tests for nets.inception."""
+"""Tests for nets.re_inception."""
 
 from __future__ import absolute_import
 from __future__ import division

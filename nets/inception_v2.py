@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Contains the definition for inception v2 classification network."""
+"""Contains the definition for re_inception v2 classification network."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -34,7 +34,7 @@ def inception_v2_base(inputs,
   """Inception v2 (6a2).
 
   Constructs an Inception v2 network from inputs to the given final endpoint.
-  This method can construct the network up to the layer inception(5b) as
+  This method can construct the network up to the layer re_inception(5b) as
   described in http://arxiv.org/abs/1502.03167.
 
   Args:
@@ -501,7 +501,7 @@ def _reduced_kernel_size_for_small_input(input_tensor, kernel_size):
 
   TODO(jrru): Make this function work with unknown shapes. Theoretically, this
   can be done with the code below. Problems are two-fold: (1) If the shape was
-  known, it will be lost. (2) inception.nets.ops._two_element_tuple cannot
+  known, it will be lost. (2) re_inception.nets.ops._two_element_tuple cannot
   handle tensors that define the kernel size.
       shape = tf.shape(input_tensor)
       return = tf.pack([tf.minimum(shape[1], kernel_size[0]),
